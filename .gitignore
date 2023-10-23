@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules
+
+# Environment variables
+.env
+
+# Built output
+dist
+build
+out
+
+# IDE files
+.vscode
+.idea
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+node_modules
