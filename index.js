@@ -1,6 +1,9 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const port = 3000;
+
+const port = process.env.PORT;
 
 async function makeAuthenticatedRequest(username) {
   const response = await fetch(
@@ -13,7 +16,8 @@ async function makeAuthenticatedRequest(username) {
     }
   );
   const profile = await response.json();
-  console.log(username);
+  console.log(port);
+
   const filteredProfile = profile.list.filter(
     (item) => item.preferredUsername === username
   );
@@ -23,7 +27,6 @@ app.get("/", async (req, res) => {
   const username = req.query.username;
 
   const profile = await makeAuthenticatedRequest(username);
-  console.log(profile);
   res.send(profile[0]);
 });
 
